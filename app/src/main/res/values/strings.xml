@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">InventApp</string>
+    <string name="correo_electronico">Correo electrónico</string>
+    <string name="password">Contraseña (Mínimo 6 Caracteres)</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="digite_el_nombre">Digite el Nombre</string>
+    <string name="telefono">Teléfono</string>
+    <string name="repetir_password">Repetir Contraseña</string>
+    <string name="registrar">Registrar</string>
+    <string name="resultado">resultado</string>
+    <string name="masculino">Masculino</string>
+    <string name="femenino">Femenino</string>
+    <string name="cine">Cine</string>
+    <string name="gimnasio">Gimnasio</string>
+    <string name="leer">Leer</string>
+    <string name="series">Series</string>
+    <string name="nombre_lb">Nombre:</string>
+    <string name="correo_lb">Correo:</string>
+    <string name="telefono_lb">Telefono:</string>
+    <string name="contrasena_lb">Contraseña:</string>
+    <string name="sexo_lb">Sexo:</string>
+    <string name="pasatiempo_lb">Pasatiempos:</string>
+    <string name="fecha_nacimiento">Fecha de Nacimiento</string>
+    <string name="opciones">Opciones:</string>
+</resources>
