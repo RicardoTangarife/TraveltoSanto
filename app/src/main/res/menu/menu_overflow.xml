@@ -6,7 +6,6 @@
         android:title="@string/cerrar_sesion"
         android:id="@+id/menu_abrir"
         android:icon="@mipmap/ic_launcher"
-        app:showAsAction="ifRoom"
         />
 
 </menu>

@@ -22,10 +22,14 @@ class MainActivity : AppCompatActivity() {
         var datosRecibidos = intent.extras
         if(datosRecibidos != null){
             Toast.makeText(this, datosRecibidos?.getString("correo"), Toast.LENGTH_SHORT).show()
-            Toast.makeText(this,datosRecibidos?.getInt("password"), Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,datosRecibidos?.getString("password"), Toast.LENGTH_SHORT).show()
             correo = datosRecibidos?.getString("correo").toString()
-            password = datosRecibidos?.getInt("password").toString()
+            password = datosRecibidos?.getString("password").toString()
             tv_principal.text = correo
+        }
+        else{
+            Toast.makeText(this,"Vacioooo", Toast.LENGTH_SHORT).show()
+            tv_principal.text = "hola vacio"
         }
 
 
@@ -39,10 +43,10 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.menu_abrir){
             //Toast.makeText(this, "Menu", Toast.LENGTH_SHORT).show()
-            var intent = Intent(this, LoginActivity::class.java)
-            intent.putExtra("correo",correo)
-            intent.putExtra("password",password)
-            startActivity(intent)
+            var intentcerrar = Intent(this, LoginActivity::class.java)
+            intentcerrar.putExtra("correo",correo)
+            intentcerrar.putExtra("password",password)
+            startActivity(intentcerrar)
             finish()
         }
         return super.onOptionsItemSelected(item)

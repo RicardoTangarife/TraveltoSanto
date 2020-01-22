@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -24,11 +25,11 @@ class LoginActivity : AppCompatActivity() {
         bt_login.setOnClickListener{
             val correomio = et_correo.text.toString()
             val passwordmio = et_password.text.toString()
-            if(correomio==correorec){
+            if(correomio==correorec && correorec!=""){
                 if(passwordmio==passwordrec){
                     var intentmain = Intent(this, MainActivity::class.java)
-                    intent.putExtra("correo",correorec)
-                    intent.putExtra("password",passwordrec)
+                    intentmain.putExtra("correo",correorec)
+                    intentmain.putExtra("password",passwordrec)
                     startActivity(intentmain)
                     finish()
                 }
@@ -44,6 +45,18 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(this, "Correo y Contraseña Incorrecta", Toast.LENGTH_SHORT).show()
                 }
             }
+        }
+
+
+        var datosMain = intent.extras
+        if(datosMain != null){
+            Toast.makeText(this, datosMain?.getString("correo"), Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,datosMain?.getString("password"), Toast.LENGTH_SHORT).show()
+            correorec = datosMain?.getString("correo").toString()
+            passwordrec = datosMain?.getString("password").toString()
+        }
+        else{
+            Toast.makeText(this,"Vacioooo", Toast.LENGTH_SHORT).show()
         }
     }
 
