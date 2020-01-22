@@ -1,6 +1,8 @@
 package com.ricardotangarife.traveltosanto
 
+import android.app.Activity
 import android.app.DatePickerDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -72,22 +74,23 @@ class RegistroActivity : AppCompatActivity() {
             /*if(rb_masculino.isChecked) sexo = "Masculino"
             else sexo = "Femenino"*/
 
-            /*
+
             if (nombre.isEmpty() || correo.isEmpty() || et_telefono.text.toString().isEmpty()||password.isEmpty()){
                 Toast.makeText( this, "Debe digitar todos los campos", Toast.LENGTH_SHORT).show()
             }else{
-                val telefono = et_telefono.text.toString().toInt()
-                tv_resultado.text = getString(R.string.nombre_lb)+ SPACE + nombre +
-                        INTERLINE + getString(R.string.correo_lb)+ SPACE + correo +
-                        INTERLINE + getString(R.string.telefono_lb)+ SPACE + telefono +
-                        INTERLINE + getString(R.string.contrasena_lb)+ SPACE + password +
-  //                      INTERLINE + getString(R.string.sexo_lb)+ SPACE + sexo +
-                        INTERLINE + getString(R.string.pasatiempo_lb)+ SPACE + pasatiempos +
-                        INTERLINE + getString(R.string.fecha_nacimiento) + SPACE + fecha
+                var intent = Intent()
+                intent.putExtra("correo",correo)
+                intent.putExtra("password",password)
+                setResult(Activity.RESULT_OK, intent)
+                finish()
             }
-
-*/
         }
+    }
+
+    override fun onBackPressed() {
+        setResult(Activity.RESULT_CANCELED)
+        finish()
+        super.onBackPressed()
     }
 
 
