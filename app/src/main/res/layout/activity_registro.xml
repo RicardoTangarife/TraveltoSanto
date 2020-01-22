@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,125 +8,176 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="8dp"
+    android:background="@drawable/santo4"
     tools:context=".RegistroActivity">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/et_nombre"
-        android:hint="@string/digite_el_nombre"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/et_correo"
-        android:inputType="textEmailAddress"
-        android:hint="@string/correo_electronico"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/et_telefono"
-        android:inputType="number"
-        android:hint="@string/telefono"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/et_password"
-        android:inputType="textPassword"
-        android:hint="@string/password"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/et_reppassword"
-        android:inputType="textPassword"
-        android:hint="@string/repetir_password"/>
-
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <RadioButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/masculino"
-            android:id="@+id/rb_masculino"
-            android:checked="true"/>
-        <RadioButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/femenino"
-            android:id="@+id/rb_femenino"/>
-    </RadioGroup>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="@string/opciones"
-        android:layout_gravity="center"/>
-
-    <TableLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_weight="1"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/cine"
-                android:id="@+id/cb_cine"/>
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:id="@+id/et_title"
+                android:text="@string/titulo"
+                android:textSize= "20sp"
+                android:textColor="@color/blue"
+                android:textAlignment="center"
+                android:layout_margin="10dp"
+                android:textStyle="bold"/>
+
+
+
+            <EditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/gimnasio"
-                android:id="@+id/cb_gimnasio"/>
-        </TableRow>
+                android:id="@+id/et_nombre"
+                android:background="@drawable/radius"
+                style="@style/margen"
+                android:hint="@string/digite_el_nombre"/>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_weight="1"
+            <EditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/leer"
-                android:id="@+id/cb_leer"/>
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:id="@+id/et_correo"
+                android:background="@drawable/radius"
+                style="@style/margen"
+                android:inputType="textEmailAddress"
+                android:hint="@string/correo_electronico"/>
+
+            <EditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/series"
-                android:id="@+id/cb_series"/>
-        </TableRow>
-    </TableLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="@string/fecha_nacimiento"
-        android:id="@+id/tv_showPicker"/>
+                android:id="@+id/et_telefono"
+                android:background="@drawable/radius"
+                style="@style/margen"
+                android:inputType="number"
+                android:hint="@string/telefono"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/bt_resgistrar"
-        android:text="@string/registrar"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_resultado"
-        android:textSize="16sp"
-        android:text="@string/resultado"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_password"
+                android:background="@drawable/radius"
+                style="@style/margen"
+                android:inputType="textPassword"
+                android:hint="@string/password"/>
 
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_reppassword"
+                android:background="@drawable/radius"
+                style="@style/margen"
+                android:inputType="textPassword"
+                android:hint="@string/repetir_password"/>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/margen"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/masculino"
+                    android:textColor="@color/white"
+                    android:id="@+id/rb_masculino"
+                    android:checked="true"/>
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/femenino"
+                    android:textColor="@color/white"
+                    android:id="@+id/rb_femenino"/>
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text= "@string/motivo_de_visita"
+                android:textAlignment="center"
+                android:layout_marginBottom="6sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                style="@style/margen"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/aventura"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:id="@+id/cb_cine"/>
+                    <CheckBox
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cultural"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:id="@+id/cb_gimnasio"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/religioso"
+                        android:textColor="@color/white"
+                        android:id="@+id/cb_leer"/>
+                    <CheckBox
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/caminar"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:id="@+id/cb_series"/>
+                </TableRow>
+            </TableLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_margin="10sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:id="@+id/tv_showPicker"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radius_bt"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:id="@+id/bt_resgistrar"
+                android:layout_gravity="center"
+                android:text="@string/registrar"/>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

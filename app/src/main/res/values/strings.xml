@@ -23,4 +23,11 @@
     <string name="pasatiempo_lb">Pasatiempos:</string>
     <string name="fecha_nacimiento">Fecha de Nacimiento</string>
     <string name="opciones">Opciones:</string>
+    <string name="titulo">REGISTRARME</string>
+    <string name="motivo_de_visita">Motivo de visita</string>
+    <string name="aventura">Aventura</string>
+    <string name="cultural">Cultural</string>
+    <string name="religioso">Religioso</string>
+    <string name="caminar">Caminar</string>
+    <string name="app">TravelToSanto</string>
 </resources>

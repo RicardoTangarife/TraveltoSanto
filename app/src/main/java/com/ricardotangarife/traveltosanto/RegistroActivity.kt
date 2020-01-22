@@ -22,7 +22,7 @@ class RegistroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
-        var sexo = getString(R.string.masculino)
+    /*    var sexo = getString(R.string.masculino)
 
         rb_masculino.setOnClickListener {
             sexo  = getString(R.string.masculino)
@@ -30,7 +30,7 @@ class RegistroActivity : AppCompatActivity() {
         rb_femenino.setOnClickListener {
             sexo  = getString(R.string.femenino)
         }
-
+*/
         val dateSetListener  = object : DatePickerDialog.OnDateSetListener{
             override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
                 cal.set(Calendar.YEAR, year)
@@ -72,6 +72,7 @@ class RegistroActivity : AppCompatActivity() {
             /*if(rb_masculino.isChecked) sexo = "Masculino"
             else sexo = "Femenino"*/
 
+            /*
             if (nombre.isEmpty() || correo.isEmpty() || et_telefono.text.toString().isEmpty()||password.isEmpty()){
                 Toast.makeText( this, "Debe digitar todos los campos", Toast.LENGTH_SHORT).show()
             }else{
@@ -80,12 +81,12 @@ class RegistroActivity : AppCompatActivity() {
                         INTERLINE + getString(R.string.correo_lb)+ SPACE + correo +
                         INTERLINE + getString(R.string.telefono_lb)+ SPACE + telefono +
                         INTERLINE + getString(R.string.contrasena_lb)+ SPACE + password +
-                        INTERLINE + getString(R.string.sexo_lb)+ SPACE + sexo +
+  //                      INTERLINE + getString(R.string.sexo_lb)+ SPACE + sexo +
                         INTERLINE + getString(R.string.pasatiempo_lb)+ SPACE + pasatiempos +
                         INTERLINE + getString(R.string.fecha_nacimiento) + SPACE + fecha
             }
 
-
+*/
         }
     }
 
