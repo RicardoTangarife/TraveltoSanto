@@ -50,23 +50,23 @@ class LoginActivity : AppCompatActivity() {
 
         var datosMain = intent.extras
         if(datosMain != null){
-            Toast.makeText(this, datosMain?.getString("correo"), Toast.LENGTH_SHORT).show()
-            Toast.makeText(this,datosMain?.getString("password"), Toast.LENGTH_SHORT).show()
+          //  Toast.makeText(this, datosMain?.getString("correo"), Toast.LENGTH_SHORT).show()
+           // Toast.makeText(this,datosMain?.getString("password"), Toast.LENGTH_SHORT).show()
             correorec = datosMain?.getString("correo").toString()
             passwordrec = datosMain?.getString("password").toString()
         }
         else{
-            Toast.makeText(this,"Vacioooo", Toast.LENGTH_SHORT).show()
+        //    Toast.makeText(this,"Vacioooo", Toast.LENGTH_SHORT).show()
         }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if(requestCode==1234 && resultCode== Activity.RESULT_CANCELED){
-            Toast.makeText(this, "No envio nada", Toast.LENGTH_SHORT).show()
+           // Toast.makeText(this, "No envio nada", Toast.LENGTH_SHORT).show()
         }
         if(requestCode==1234 && resultCode== Activity.RESULT_OK){
-            Toast.makeText(this, data?.extras?.getString("correo"), Toast.LENGTH_SHORT).show()
-            Toast.makeText(this, data?.extras?.getString("password"), Toast.LENGTH_SHORT).show()
+       //     Toast.makeText(this, data?.extras?.getString("correo"), Toast.LENGTH_SHORT).show()
+        //    Toast.makeText(this, data?.extras?.getString("password"), Toast.LENGTH_SHORT).show()
             correorec = data?.extras?.getString("correo").toString()
             passwordrec = data?.extras?.getString("password").toString()
         }

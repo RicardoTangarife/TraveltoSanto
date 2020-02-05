@@ -21,14 +21,14 @@ class MainActivity : AppCompatActivity() {
 
         var datosRecibidos = intent.extras
         if(datosRecibidos != null){
-            Toast.makeText(this, datosRecibidos?.getString("correo"), Toast.LENGTH_SHORT).show()
-            Toast.makeText(this,datosRecibidos?.getString("password"), Toast.LENGTH_SHORT).show()
+       //     Toast.makeText(this, datosRecibidos?.getString("correo"), Toast.LENGTH_SHORT).show()
+         //   Toast.makeText(this,datosRecibidos?.getString("password"), Toast.LENGTH_SHORT).show()
             correo = datosRecibidos?.getString("correo").toString()
             password = datosRecibidos?.getString("password").toString()
             tv_principal.text = correo
         }
         else{
-            Toast.makeText(this,"Vacioooo", Toast.LENGTH_SHORT).show()
+        //    Toast.makeText(this,"Vacioooo", Toast.LENGTH_SHORT).show()
             tv_principal.text = "hola vacio"
         }
 

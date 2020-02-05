@@ -31,4 +31,5 @@
     <string name="caminar">Caminar</string>
     <string name="app">TravelToSanto</string>
     <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="cancelar">Cancelar</string>
 </resources>
