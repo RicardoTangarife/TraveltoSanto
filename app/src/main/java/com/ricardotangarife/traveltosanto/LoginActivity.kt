@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.ricardotangarife.traveltosanto.utils.botton_navegation.InicioActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -27,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
             val passwordmio = et_password.text.toString()
             if(correomio==correorec && correorec!=""){
                 if(passwordmio==passwordrec){
-                    var intentmain = Intent(this, MainActivity::class.java)
+                    var intentmain = Intent(this, InicioActivity::class.java)
                     intentmain.putExtra("correo",correorec)
                     intentmain.putExtra("password",passwordrec)
                     startActivity(intentmain)

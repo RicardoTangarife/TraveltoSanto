@@ -1,4 +1,4 @@
-package com.ricardotangarife.traveltosanto.utils
+package com.ricardotangarife.traveltosanto.utils.Constantes
 
 class Constantes {
     companion object{
