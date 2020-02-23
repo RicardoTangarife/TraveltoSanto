@@ -1,13 +1,12 @@
-package com.ricardotangarife.traveltosanto.utils.Clases
+package com.ricardotangarife.traveltosanto.utils.RV_HabPlazaReal
 
 import android.content.Context
 import android.content.Intent
-import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.view.menu.MenuView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.ricardotangarife.traveltosanto.R
 import kotlinx.android.synthetic.main.item_plazareal.view.*
@@ -55,14 +54,16 @@ class HabPlazaRealRVAdapter (
             itemView.tv_precio.text = habitacion.precio
             itemView.img_habitacion.setImageResource(habitacion.foto)
             itemView.setOnClickListener{
-                Toast.makeText(context, habitacion.Tipo, Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Pasa a una actividad, donde esta el formulario para reservar", Toast.LENGTH_SHORT).show()
+       /*         var intent = Intent(this, Form_reservarActivity::class.java)
+                intent.putExtra("Tipo", habitacion.Tipo)
+                startActivity(intent)
+                */
 
             }
 
         }
 
     }
-
-
 }
 

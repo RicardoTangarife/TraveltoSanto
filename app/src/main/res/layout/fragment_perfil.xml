@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".utils.fragment_bottom_navegation.PerfilFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:id="@+id/imageView4"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Perfil" />
+        android:layout_height="632dp"
+        android:src="@drawable/perfil_prueba" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/prueba_perfil"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
 </FrameLayout>

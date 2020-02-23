@@ -1,4 +1,4 @@
-package com.ricardotangarife.traveltosanto.utils.Clases
+package com.ricardotangarife.traveltosanto.utils.RV_HabPlazaReal
 
 import java.io.Serializable
 

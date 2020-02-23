@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 import com.ricardotangarife.traveltosanto.R
-import com.ricardotangarife.traveltosanto.utils.Clases.HabPlazaReal
-import com.ricardotangarife.traveltosanto.utils.Clases.HabPlazaRealRVAdapter
+import com.ricardotangarife.traveltosanto.utils.RV_HabPlazaReal.HabPlazaReal
+import com.ricardotangarife.traveltosanto.utils.RV_HabPlazaReal.HabPlazaRealRVAdapter
 import kotlinx.android.synthetic.main.fragment_reservation.view.*
 
 /**
@@ -34,10 +34,37 @@ class ReservationFragment : Fragment() {
         habPlazaRealList.add(
             HabPlazaReal(
                  "Habitación Básica",
-            "Cama doble" +
+            "Cama doble" + "\n" +
                        "3 días y 2 noches",
-                "$200.000",
+                "$150.000",
                         R.drawable.hab3)
+        )
+
+        habPlazaRealList.add(
+            HabPlazaReal(
+                "Habitación Doble",
+            "2 Camas Medianas" + "\n" +
+                    "3 días y 2 noches",
+                "$200.000",
+                    R.drawable.hab4)
+        )
+
+        habPlazaRealList.add(
+            HabPlazaReal(
+                "Habitación Premium",
+            "Cama doble," + "\n"+
+                    "3 días y 2 noches",
+                "$180.000",
+                R.drawable.hab1)
+        )
+
+        habPlazaRealList.add(
+            HabPlazaReal(
+                "Habitación Simple",
+                "Cama sensilla"+ "\n"+
+                        "2 día y 1 noche",
+                "80.000",
+                R.drawable.hab2)
         )
 
         view.rv_habitPlazaReal.setHasFixedSize(true)

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".utils.fragment_bottom_navegation.InicioFragment">
+    tools:context=".utils.fragment_bottom_navegation.InicioFragment"
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -15,48 +16,90 @@
 
     <TableLayout
         android:layout_width="match_parent"
+        android:layout_margin="8dp"
         android:layout_height="wrap_content">
 
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:layout_weight="3">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/bt_hoteles"
+                android:text="@string/hoteles"
+                android:background="@drawable/bt_inicio">
+
+            </Button>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/bt_restaurante"
+                android:text="@string/restaurante"
+                android:background="@drawable/bt_inicio">
+
+            </Button>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/bt_cajeros"
+                android:text="@string/cajeros"
+                android:background="@drawable/bt_inicio">
+
+            </Button>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="3">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/bt_lugares"
+                android:text="@string/lugares"
+                android:background="@drawable/bt_inicio">
+
+            </Button>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/bt_tiendas"
+                android:text="@string/tiendas"
+                android:background="@drawable/bt_inicio">
+
+            </Button>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/bt_bares"
+                android:text="@string/bares"
+                android:background="@drawable/bt_inicio">
+
+            </Button>
+        </TableRow>
     </TableLayout>
 
-    <TableRow
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3"
-            tools:ignore="MissingConstraints">
-
-        </Button>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3"
-            tools:ignore="MissingConstraints">
-
-        </Button>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3"
-            tools:ignore="MissingConstraints">
-
-        </Button>
-
-    </TableRow>
-
+        android:layout_height="wrap_content"
+        android:text="@string/prueba_inicio"
+        android:textColor="@android:color/black"/>
 
 </LinearLayout>

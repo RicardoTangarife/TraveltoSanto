@@ -4,38 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="3dp"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
     android:background="@color/colorPrimary"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
     android:padding="2dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp">
+        android:layout_height="match_parent"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="2dp">
 
             <ImageView
                 android:id="@+id/img_habitacion"
                 android:layout_width="102dp"
                 android:layout_height="100dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/tv_tipo"
-                android:layout_width="124dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:text="Tipo_Habitacion"
+                android:layout_width="150dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/tipo_habitacion"
                 android:textColor="#45494A"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/img_habitacion"
@@ -43,25 +50,24 @@
 
             <TextView
                 android:id="@+id/tv_descripcion"
-                android:layout_width="124dp"
-                android:layout_height="60dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
+                android:layout_width="125dp"
+                android:layout_height="51dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
                 android:layout_marginTop="8dp"
-                android:text="Descripcion_Habitación"
+                android:text="@string/descripcion_habitaci_n"
                 app:layout_constraintStart_toEndOf="@+id/img_habitacion"
                 app:layout_constraintTop_toBottomOf="@+id/tv_tipo" />
 
             <TextView
                 android:id="@+id/tv_precio"
-                android:layout_width="71dp"
-                android:layout_height="20dp"
+                android:layout_width="69dp"
+                android:layout_height="18dp"
                 android:layout_marginBottom="48dp"
-                android:text="$Precio"
+                android:text="@string/precio"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.851"
-                app:layout_constraintStart_toEndOf="@+id/tv_descripcion" />
+                app:layout_constraintEnd_toEndOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </FrameLayout>

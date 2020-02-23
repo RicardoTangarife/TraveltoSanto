@@ -44,4 +44,25 @@
     <string name="title_activity_maps">Map</string>
     <string name="mapa">No se cargo el mapa correctamente</string>
     <string name="perfil">Perfil</string>
+    <string name="tipo_habitacion">Tipo_Habitacion</string>
+    <string name="descripcion_habitaci_n">Descripcion_Habitación</string>
+    <string name="precio1">$Precio</string>
+    <string name="hotel_plaza_real">Hotel Plaza Real</string>
+    <string name="hoteles">Hoteles</string>
+    <string name="restaurante">Restaurante</string>
+    <string name="cajeros">Cajeros</string>
+    <string name="lugares">Lugares</string>
+    <string name="tiendas">Tiendas</string>
+    <string name="bares">Bares</string>
+    <string name="prueba_perfil">Fragmento para perfil, donde se tendrá información básica del usuario, las reservar realizadas y los lugares que ha visitado</string>
+    <string name="prueba_inicio">Este fragmento es para el inicio, tendra el mapa en la parte superiror, luego tendrá botones para mostrar mapas con ubicaciones especificas y por ultimo contendrá información, como videos imagenes y sitios recomendados del pueblo</string>
+    <string name="formato">MM/dd/yyyy</string>
+    <string name="pick_date">pick_date</string>
+    <string name="fecha">Fecha de reservación</string>
+    <string name="c_dula">Cédula</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="reservar">Reservar</string>
+    <string name="precio">$Precio</string>
+    <string name="inicio_">Inicio</string>
+    <string name="reservar_">Reservar</string>
 </resources>

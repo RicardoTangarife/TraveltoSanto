@@ -8,18 +8,18 @@
     <fragment
         android:id="@+id/m_inicio"
         android:name="com.ricardotangarife.traveltosanto.utils.fragment_bottom_navegation.InicioFragment"
-        android:label="@string/title_home"
+        android:label="@string/inicio_"
         tools:layout="@layout/fragment_inicio" />
 
     <fragment
         android:id="@+id/m_reservation"
         android:name="com.ricardotangarife.traveltosanto.utils.fragment_bottom_navegation.ReservationFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/reservar_"
         tools:layout="@layout/fragment_reservation" />
 
     <fragment
         android:id="@+id/m_perfil"
         android:name="com.ricardotangarife.traveltosanto.utils.fragment_bottom_navegation.PerfilFragment"
-        android:label="@string/title_notifications"
+        android:label="Perfil"
         tools:layout="@layout/fragment_perfil" />
 </navigation>
