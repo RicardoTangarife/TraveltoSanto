@@ -17,15 +17,16 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/et_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/et_title"
-                android:text="@string/titulo"
-                android:textSize= "20sp"
-                android:textColor="@color/colorPrimary"
-                android:textAlignment="center"
                 android:layout_margin="10dp"
-                android:textStyle="bold"/>
+                android:gravity="center_horizontal"
+                android:text="@string/titulo"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
 
 
@@ -166,26 +167,27 @@
                 android:id="@+id/tv_showPicker"/>
 -->
             <Button
+                android:id="@+id/bt_resgistrar"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="@drawable/radius_bt"
+                android:layout_gravity="center"
                 android:layout_marginStart="65dp"
                 android:layout_marginEnd="65dp"
-                android:id="@+id/bt_resgistrar"
-                android:layout_gravity="center"
-                android:text="@string/registrar"/>
+                android:background="@drawable/radius_bt"
+                android:text="@string/registrar"
+                android:textColor="@color/white" />
 
             <Button
+                android:id="@+id/bt_cancelar"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="@drawable/bt_inicio"
-                android:layout_marginStart="65dp"
-                android:layout_marginEnd="65dp"
-                android:layout_marginTop="10dp"
-                android:id="@+id/bt_cancelar"
-                android:textColor="@android:color/white"
                 android:layout_gravity="center"
-                android:text="@string/cancelar"/>
+                android:layout_marginStart="65dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="65dp"
+                android:background="@drawable/radius_bt"
+                android:text="@string/cancelar"
+                android:textColor="@android:color/white" />
 
         </LinearLayout>
     </ScrollView>

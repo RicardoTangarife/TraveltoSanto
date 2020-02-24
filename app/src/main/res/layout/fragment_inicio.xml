@@ -1,105 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".utils.fragment_bottom_navegation.InicioFragment"
-    android:orientation="vertical">
+    tools:context=".utils.fragment_bottom_navegation.InicioFragment">
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/mapa" />
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="58dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_margin="8dp"
-        android:layout_height="wrap_content">
-
-
-
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="0dp"
-            android:layout_weight="3">
+            android:orientation="vertical">
 
-            <Button
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/mapa" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:layout_weight="3">
+
+                    <Button
+                        android:id="@+id/bt_hoteles"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/bt_inicio"
+                        android:text="@string/hoteles">
+
+                    </Button>
+
+                    <Button
+                        android:id="@+id/bt_restaurante"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/bt_inicio"
+                        android:text="@string/restaurante">
+
+                    </Button>
+
+                    <Button
+                        android:id="@+id/bt_cajeros"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/bt_inicio"
+                        android:text="@string/cajeros">
+
+                    </Button>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3">
+
+                    <Button
+                        android:id="@+id/bt_lugares"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/bt_inicio"
+                        android:text="@string/lugares">
+
+                    </Button>
+
+                    <Button
+                        android:id="@+id/bt_tiendas"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/bt_inicio"
+                        android:text="@string/tiendas">
+
+                    </Button>
+
+                    <Button
+                        android:id="@+id/bt_bares"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/bt_inicio"
+                        android:text="@string/bares">
+
+                    </Button>
+                </TableRow>
+            </TableLayout>
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/bt_hoteles"
-                android:text="@string/hoteles"
-                android:background="@drawable/bt_inicio">
+                android:text="@string/prueba_inicio"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+    </ScrollView>
 
-            </Button>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/bt_restaurante"
-                android:text="@string/restaurante"
-                android:background="@drawable/bt_inicio">
-
-            </Button>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/bt_cajeros"
-                android:text="@string/cajeros"
-                android:background="@drawable/bt_inicio">
-
-            </Button>
-
-        </TableRow>
-
-        <TableRow
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            android:layout_weight="3">
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/bt_lugares"
-                android:text="@string/lugares"
-                android:background="@drawable/bt_inicio">
-
-            </Button>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/bt_tiendas"
-                android:text="@string/tiendas"
-                android:background="@drawable/bt_inicio">
-
-            </Button>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/bt_bares"
-                android:text="@string/bares"
-                android:background="@drawable/bt_inicio">
-
-            </Button>
-        </TableRow>
-    </TableLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/prueba_inicio"
-        android:textColor="@android:color/black"/>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

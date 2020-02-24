@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#146510</color>
+    <color name="colorPrimary">#4e8a0a</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#0000ff</color>
     <item name="black" type="color">#000000</item>
@@ -140,7 +140,7 @@
     <item name="lightyellow" type="color">#ffffe0</item>
     <item name="snow" type="color">#fffafa</item>
     <item name="ivory" type="color">#fffff0</item>
-    <item name="white" type="color">#ffffff</item>
+    <item name="white" type="color">#FFFFFF</item>
 
 
     <integer-array name="EditColors">
