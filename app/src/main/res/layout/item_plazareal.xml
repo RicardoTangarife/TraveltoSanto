@@ -15,6 +15,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#00D31414"
+        app:cardBackgroundColor="@color/colorPrimary"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp">
 
@@ -22,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="2dp"
-            android:background="#00726C6C">
+            android:background="#FBFFFB">
 
             <ImageView
                 android:id="@+id/img_habitacion"
@@ -44,7 +46,7 @@
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="12dp"
                 android:text="@string/tipo_habitacion"
-                android:textColor="@color/whitesmoke"
+                android:textColor="#070707"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/img_habitacion"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -57,6 +59,7 @@
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/descripcion_habitaci_n"
+                android:textColor="#4D4A4A"
                 app:layout_constraintStart_toEndOf="@+id/img_habitacion"
                 app:layout_constraintTop_toBottomOf="@+id/tv_tipo" />
 
@@ -66,6 +69,7 @@
                 android:layout_height="18dp"
                 android:layout_marginBottom="48dp"
                 android:text="@string/precio"
+                android:textColor="#A8EC73"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1046915237898",
+    "firebase_url": "https://traveltosanto.firebaseio.com",
+    "project_id": "traveltosanto",
+    "storage_bucket": "traveltosanto.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1046915237898:android:38b042003914159604f7f3",
+        "android_client_info": {
+          "package_name": "com.ricardotangarife.traveltosanto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1046915237898-t84h279ab1fftp3m9q06ppgvm84vjvc8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ricardotangarife.traveltosanto",
+            "certificate_hash": "4fefa20cdf0c579fe70c2fa53ee4244d835d4bfa"
+          }
+        },
+        {
+          "client_id": "1046915237898-tndn2drjlms0na981bl67d5fskv2h9aa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8YdhqnwaCz1IsNQ2bORxoN0qSA-tl95E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1046915237898-tndn2drjlms0na981bl67d5fskv2h9aa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
