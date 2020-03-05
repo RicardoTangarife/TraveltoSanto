@@ -57,6 +57,7 @@ class HabPlazaRealRVAdapter (
             itemView.setOnClickListener{
                 //Toast.makeText(context, "Pasa a una actividad, donde esta el formulario para reservar", Toast.LENGTH_SHORT).show()
                 var intent = Intent(context,Form_reservarActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 intent.putExtra("Tipo", habitacion.Tipo)
                 context.startActivity(intent)
                 //finish()
