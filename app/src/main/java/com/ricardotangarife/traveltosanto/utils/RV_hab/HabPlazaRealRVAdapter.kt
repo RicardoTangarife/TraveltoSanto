@@ -1,12 +1,10 @@
-package com.ricardotangarife.traveltosanto.utils.RV_HabPlazaReal
+package com.ricardotangarife.traveltosanto.utils.RV_hab
 
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.ricardotangarife.traveltosanto.R
 import kotlinx.android.synthetic.main.item_plazareal.view.*

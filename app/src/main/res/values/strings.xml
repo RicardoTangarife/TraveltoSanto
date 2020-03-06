@@ -65,4 +65,5 @@
     <string name="precio">$Precio</string>
     <string name="inicio_">Inicio</string>
     <string name="reservar_">Reservar</string>
+    <string name="lugar_recomendado">Lugar Recomendado</string>
 </resources>

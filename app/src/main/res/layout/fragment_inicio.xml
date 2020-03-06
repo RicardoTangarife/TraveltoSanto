@@ -16,8 +16,10 @@
         android:layout_marginBottom="58dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,30 +47,33 @@
 
                     <Button
                         android:id="@+id/bt_hoteles"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        style="@style/botton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:background="@drawable/bt_inicio"
+                        android:drawableTop="@drawable/ic_local_hotel_black_24dp"
                         android:text="@string/hoteles">
 
                     </Button>
 
                     <Button
                         android:id="@+id/bt_restaurante"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        style="@style/botton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:background="@drawable/bt_inicio"
+                        android:drawableTop="@drawable/ic_restaurant_black_24dp"
                         android:text="@string/restaurante">
 
                     </Button>
 
                     <Button
                         android:id="@+id/bt_cajeros"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        style="@style/botton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:background="@drawable/bt_inicio"
+                        android:drawableTop="@drawable/ic_cajero"
                         android:text="@string/cajeros">
 
                     </Button>
@@ -82,30 +87,33 @@
 
                     <Button
                         android:id="@+id/bt_lugares"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        style="@style/botton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:background="@drawable/bt_inicio"
+                        android:drawableTop="@drawable/ic_place"
                         android:text="@string/lugares">
 
                     </Button>
 
                     <Button
                         android:id="@+id/bt_tiendas"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        style="@style/botton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:background="@drawable/bt_inicio"
+                        android:drawableTop="@drawable/ic_store"
                         android:text="@string/tiendas">
 
                     </Button>
 
                     <Button
                         android:id="@+id/bt_bares"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        style="@style/botton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:background="@drawable/bt_inicio"
+                        android:drawableTop="@drawable/ic_bar"
                         android:text="@string/bares">
 
                     </Button>
@@ -113,10 +121,19 @@
             </TableLayout>
 
             <TextView
+                android:id="@+id/tv_recomendado"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/prueba_inicio"
-                android:textColor="@android:color/black" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="Recomendados"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
         </LinearLayout>
     </ScrollView>
 

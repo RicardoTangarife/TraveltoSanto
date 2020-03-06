@@ -1,4 +1,4 @@
-package com.ricardotangarife.traveltosanto.utils.RV_HabPlazaReal
+package com.ricardotangarife.traveltosanto.utils.RV_hab
 
 import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity

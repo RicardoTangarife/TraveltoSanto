@@ -16,9 +16,12 @@
         <item name= "android:paddingLeft">8dp</item>
         <item name="android:paddingBottom">8dp</item>
         <item name="android:paddingTop">8dp</item>
+    </style>
 
-
-
-
+    <style name="botton">
+        <item name = "android:layout_weight">1</item>
+        <item name = "android:gravity">bottom|center</item>
+        <item name = "android:padding">2dp</item>
+        <item name= "android:textSize">12sp</item>
     </style>
 </resources>

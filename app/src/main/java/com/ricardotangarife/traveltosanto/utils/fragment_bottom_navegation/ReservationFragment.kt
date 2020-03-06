@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 import com.ricardotangarife.traveltosanto.R
-import com.ricardotangarife.traveltosanto.utils.RV_HabPlazaReal.HabPlazaReal
-import com.ricardotangarife.traveltosanto.utils.RV_HabPlazaReal.HabPlazaRealRVAdapter
+import com.ricardotangarife.traveltosanto.utils.RV_hab.HabPlazaReal
+import com.ricardotangarife.traveltosanto.utils.RV_hab.HabPlazaRealRVAdapter
 import kotlinx.android.synthetic.main.fragment_reservation.view.*
 
 /**
