@@ -59,6 +59,9 @@ class HabPlazaRealRVAdapter (
                 var intent = Intent(context,Form_reservarActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 intent.putExtra("Tipo", habitacion.Tipo)
+                intent.putExtra("Descripcion", habitacion.Descripcion)
+                intent.putExtra("Precio", habitacion.precio)
+                intent.putExtra("foto", habitacion.foto)
                 context.startActivity(intent)
                 //finish()
             }

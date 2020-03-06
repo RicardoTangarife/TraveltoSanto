@@ -10,6 +10,10 @@ import java.util.*
 
 class Form_reservarActivity : AppCompatActivity() {
 
+    var Tipo = ""
+    var Descripcion = ""
+    var precio = ""
+    var foto = 0
     private var cal = Calendar.getInstance()
     private lateinit var fecha : String
 
@@ -41,5 +45,18 @@ class Form_reservarActivity : AppCompatActivity() {
                 cal.get(Calendar.DAY_OF_MONTH)
             ).show()
         }
+
+     val datoshab = intent.extras
+        if (datoshab != null){
+            Tipo = datoshab?.getString("Tipo").toString()
+            Descripcion = datoshab?.getString("Descripcion").toString()
+            precio = datoshab?.getString("Precio").toString()
+            foto = datoshab?.getInt("foto")
+
+        }
+        tv_tipo.text = Tipo
+        tv_descripcion.text = Descripcion
+        tv_precio.text = precio
+        img_habitacion.setImageResource(foto)
     }
 }
