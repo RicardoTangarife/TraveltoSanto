@@ -66,4 +66,8 @@
     <string name="inicio_">Inicio</string>
     <string name="reservar_">Reservar</string>
     <string name="lugar_recomendado">Lugar Recomendado</string>
+    <string name="error_msg_login">There is no user record corresponding to this identifier. The user may have been deleted.</string>
+    <string name="error_msg_email_login">The email address is badly formatted.</string>
+    <string name="error_msg_email_used">The email address is already in use by another account.</string>
+    <string name="close_sesion">Cerrar Sesion</string>
 </resources>
