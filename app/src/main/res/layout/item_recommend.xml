@@ -22,18 +22,14 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="78dp"
             android:layout_marginBottom="2dp"
-            android:background="#FBFFFB">
+            android:background="#EDEDED">
 
             <ImageView
                 android:id="@+id/img_recommend"
-                android:layout_width="102dp"
-                android:layout_height="100dp"
-                android:layout_marginStart="2dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
+                android:layout_width="112dp"
+                android:layout_height="76dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
@@ -45,6 +41,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:text="@string/lugar_recomendado"
+                android:textColor="#000000"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/img_recommend"

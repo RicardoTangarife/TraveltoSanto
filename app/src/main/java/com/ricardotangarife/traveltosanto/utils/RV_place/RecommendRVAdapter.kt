@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.ricardotangarife.traveltosanto.R
+import kotlinx.android.synthetic.main.item_recommend.view.*
 
 class RecommendRVAdapter (
     var context: Context,
@@ -16,7 +17,7 @@ class RecommendRVAdapter (
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int): RecommendViewHolder {
-        var itemView = LayoutInflater.from(context).inflate(R.layout.item_plazareal, parent, false)
+        var itemView = LayoutInflater.from(context).inflate(R.layout.item_recommend, parent, false)
         return RecommendViewHolder(itemView, context)
     }
 
@@ -40,7 +41,8 @@ class RecommendRVAdapter (
         }
 
         fun bindRecommend (recommend: Recommend){
-
+            itemView.tv_recommend.text = recommend.title_recommend
+            itemView.img_recommend.setImageResource(recommend.img_Recommend)
         }
     }
 

@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_reservation.view.*
 /**
  * A simple [Fragment] subclass.
  */
-class ReservationFragment : Fragment() {
+class  ReservationFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
