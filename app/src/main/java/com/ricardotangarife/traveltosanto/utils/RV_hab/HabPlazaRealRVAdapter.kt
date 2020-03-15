@@ -7,15 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ricardotangarife.traveltosanto.R
+import com.ricardotangarife.traveltosanto.model.Habitacion
 import kotlinx.android.synthetic.main.item_plazareal.view.*
 
 
 //import kotlinx.android.synthetic.main.item_rv.view.*
 
 
-class HabPlazaRealRVAdapter (
+class HabPlazaRealRVAdapter(
     var context: Context,
-    var habPlazaRealList: ArrayList<HabPlazaReal>
+    var habPlazaRealList: ArrayList<Habitacion>
 )   : RecyclerView.Adapter<HabPlazaRealRVAdapter.HabPlazaRealViewHolder>() {
 
     override fun onCreateViewHolder(
@@ -31,7 +32,7 @@ class HabPlazaRealRVAdapter (
     override fun onBindViewHolder(
         holder: HabPlazaRealViewHolder,
         position: Int) {
-        val habitacion : HabPlazaReal = habPlazaRealList[position]
+        val habitacion : Habitacion = habPlazaRealList[position]
          holder.bindPlazaReal(habitacion)
 
     }
@@ -47,19 +48,20 @@ class HabPlazaRealRVAdapter (
             this.context = context
         }
 
-        fun bindPlazaReal (habitacion: HabPlazaReal){
-            itemView.tv_tipo.text = habitacion.Tipo
-            itemView.tv_descripcion.text = habitacion.Descripcion
-            itemView.tv_precio.text = habitacion.precio
-            itemView.img_habitacion.setImageResource(habitacion.foto)
+        fun bindPlazaReal (habitacion: Habitacion){
+            itemView.tv_tipo.text = habitacion.titulo
+            itemView.tv_descripcion.text = habitacion.descripcion
+            itemView.tv_precio.text = habitacion.precio.toString()
+            //itemView.img_habitacion
             itemView.setOnClickListener{
                 //Toast.makeText(context, "Pasa a una actividad, donde esta el formulario para reservar", Toast.LENGTH_SHORT).show()
                 var intent = Intent(context,Form_reservarActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                intent.putExtra("Tipo", habitacion.Tipo)
-                intent.putExtra("Descripcion", habitacion.Descripcion)
+                intent.putExtra("id_hab", habitacion.id)
+                intent.putExtra("Tipo", habitacion.titulo)
+                intent.putExtra("Descripcion", habitacion.descripcion)
                 intent.putExtra("Precio", habitacion.precio)
-                intent.putExtra("foto", habitacion.foto)
+                //intent.putExtra("foto", habitacion.foto)
                 context.startActivity(intent)
                 //finish()
             }
