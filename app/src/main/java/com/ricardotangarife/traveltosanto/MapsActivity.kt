@@ -2,6 +2,7 @@ package com.ricardotangarife.traveltosanto
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GooglePlayServicesUtil
@@ -12,30 +13,28 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.ricardotangarife.traveltosanto.model.Ubicacion
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
+    var Tipo = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-
-        val status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(applicationContext)
-
-        if (status == ConnectionResult.SUCCESS){
-            val mapFragment = supportFragmentManager
-                .findFragmentById(R.id.map) as SupportMapFragment
-            mapFragment.getMapAsync(this)
+        val puntos = intent.extras
+        if(puntos != null){
+            Tipo = puntos?.getString("Tipo").toString()
         }
-        else{
-            //val dialog  = GooglePlayServicesUtil.getErrorDialog(status)
-            Toast.makeText(this, getString(R.string.mapa), Toast.LENGTH_SHORT).show()
-        }
-
-
-
+        val mapFragment = supportFragmentManager
+            .findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
     }
 
     /**
@@ -49,13 +48,29 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      */
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
+        //setMa(GoogleMap.MAP_TYPE_NORMAL)
+        // Add a markar in Sydney and move the camera
+        val principalSanto = LatLng(6.471279, -75.164492)
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(principalSanto))
 
-         //setMa(GoogleMap.MAP_TYPE_NORMAL)
+        val database = FirebaseDatabase.getInstance()
+        if(Tipo != ""){
+            val myRef = database.getReference(Tipo)
+            myRef.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    for (snapshot in dataSnapshot.children) {
+                        var sitio: Ubicacion? = snapshot.getValue(Ubicacion::class.java)
+                        //Log.w("Ubicacion", sitio!!.lat + sitio!!.lon + sitio!!.nombre)
+                        var posicion = LatLng(sitio!!.lat.toDouble(), sitio!!.lon.toDouble())
+                        mMap.addMarker(MarkerOptions().position(posicion).title(sitio!!.nombre))
+                    }
+                }
+                override fun onCancelled(error: DatabaseError) {
+                    // Failed to read value
+                    Log.w("Ubicar", "Failed to read value.", error.toException())
+                }
+            })
+        }
 
-
-        // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
 }

@@ -10,15 +10,11 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
-
     var correo = ""
     var password = ""
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         var datosRecibidos = intent.extras
         if(datosRecibidos != null){
        //     Toast.makeText(this, datosRecibidos?.getString("correo"), Toast.LENGTH_SHORT).show()
@@ -31,8 +27,6 @@ class MainActivity : AppCompatActivity() {
         //    Toast.makeText(this,"Vacioooo", Toast.LENGTH_SHORT).show()
             tv_principal.text = "hola vacio"
         }
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

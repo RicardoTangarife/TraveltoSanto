@@ -26,7 +26,6 @@ class RegistroActivity : AppCompatActivity() {
     private var cal = Calendar.getInstance()
     private lateinit var fecha : String
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
@@ -41,7 +40,6 @@ class RegistroActivity : AppCompatActivity() {
             val size = password.length
 
             val auth = FirebaseAuth.getInstance()
-
 
             if (nombre.isEmpty() || correo.isEmpty() || telefono.isEmpty()||password.isEmpty()){
                 Toast.makeText( this, "Debe digitar todos los campos", Toast.LENGTH_SHORT).show()
@@ -80,7 +78,6 @@ class RegistroActivity : AppCompatActivity() {
                 }
             }
         }
-
         bt_cancelar.setOnClickListener{
             onBackPressed()
         }
@@ -92,19 +89,16 @@ class RegistroActivity : AppCompatActivity() {
         val usuario = User(user!!.uid, user!!.email.toString(), name,movil)
         myRef.child(user!!.uid).setValue(usuario)
     }
-
     private fun goToLoginActicity(){
         var intentlogin = Intent(this, LoginActivity::class.java)
         startActivity(intentlogin)
         finish()
     }
-
     override fun onBackPressed() {
         setResult(Activity.RESULT_CANCELED)
         finish()
         super.onBackPressed()
     }
-
     fun isEmailValid(email: String?): Boolean {
         val expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$"
         val pattern: Pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE)

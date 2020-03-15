@@ -1,6 +1,7 @@
 package com.ricardotangarife.traveltosanto.utils.fragment_bottom_navegation
 
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,10 +9,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.ricardotangarife.traveltosanto.MapsActivity
 
 import com.ricardotangarife.traveltosanto.R
 import com.ricardotangarife.traveltosanto.utils.RV_hab.HabPlazaReal
 import com.ricardotangarife.traveltosanto.utils.RV_hab.HabPlazaRealRVAdapter
+import kotlinx.android.synthetic.main.fragment_inicio.view.*
 import kotlinx.android.synthetic.main.fragment_reservation.view.*
 
 /**

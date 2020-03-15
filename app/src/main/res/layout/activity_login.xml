@@ -43,13 +43,21 @@
         android:background="#7C4AC3AB"
         android:text="@string/iniciar_sesion" />
 
+    <Button
+        android:id="@+id/bt_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="#7DBEF1"
+        android:text="@string/registrarse" />
+
     <TextView
-        android:id="@+id/tv_registro"
+        android:id="@+id/tv_recuperar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:gravity="center"
-        android:text="@string/registrarse"
+        android:text="@string/olvide_pass"
         android:textColor="#5053BE"
         android:textStyle="bold" />
 </LinearLayout>
