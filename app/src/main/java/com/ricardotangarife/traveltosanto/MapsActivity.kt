@@ -52,7 +52,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         // Add a markar in Sydney and move the camera
         val principalSanto = LatLng(6.471279, -75.164492)
         mMap.moveCamera(CameraUpdateFactory.newLatLng(principalSanto))
-
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(18.0f));
         val database = FirebaseDatabase.getInstance()
         if(Tipo != ""){
             val myRef = database.getReference(Tipo)
@@ -62,7 +62,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                         var sitio: Ubicacion? = snapshot.getValue(Ubicacion::class.java)
                         //Log.w("Ubicacion", sitio!!.lat + sitio!!.lon + sitio!!.nombre)
                         var posicion = LatLng(sitio!!.lat.toDouble(), sitio!!.lon.toDouble())
-                        mMap.addMarker(MarkerOptions().position(posicion).title(sitio!!.nombre))
+                        mMap.addMarker(MarkerOptions().position(posicion).title(sitio!!.nombre.toString()))
                     }
                 }
                 override fun onCancelled(error: DatabaseError) {
@@ -70,6 +70,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     Log.w("Ubicar", "Failed to read value.", error.toException())
                 }
             })
+            if(Tipo == "lugares"){
+                mMap.animateCamera(CameraUpdateFactory.zoomTo(11.0f));
+            }
         }
 
     }
