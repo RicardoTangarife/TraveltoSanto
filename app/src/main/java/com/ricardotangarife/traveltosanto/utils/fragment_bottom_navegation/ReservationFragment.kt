@@ -121,6 +121,7 @@ class  ReservationFragment : Fragment() {
                 for(snapshot in dataSnapshot.children){
                     var hab: Habitacion?= snapshot.getValue(Habitacion::class.java)
                     allHabitaciones.add(hab!!)
+
                 }
                 habPlazaRealRVAdapter.notifyDataSetChanged()
             }

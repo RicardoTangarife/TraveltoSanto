@@ -130,6 +130,8 @@
             android:id="@+id/et_cedula"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
             android:hint="@string/c_dula" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -150,6 +152,8 @@
             android:id="@+id/et_correo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
             android:hint="@string/correo_lb" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -201,6 +205,8 @@
             android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword"
             android:hint="@string/contrase_a" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -215,11 +221,13 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_showPicker2" />
 
     <Button
-        android:id="@+id/bt_reservar"
+        android:id="@+id/bt_reserva"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/reservar"
+        android:background="@android:color/black"
+        android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/til_password" />

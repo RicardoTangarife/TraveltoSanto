@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ricardotangarife.traveltosanto.R
 import com.ricardotangarife.traveltosanto.model.Habitacion
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_plazareal.view.*
 
 
@@ -52,18 +53,19 @@ class HabPlazaRealRVAdapter(
             itemView.tv_tipo.text = habitacion.titulo
             itemView.tv_descripcion.text = habitacion.descripcion
             itemView.tv_precio.text = habitacion.precio.toString()
-            //itemView.img_habitacion
+            Picasso.get().load(habitacion.imagen).into(itemView.img_habitacion);
+
             itemView.setOnClickListener{
                 //Toast.makeText(context, "Pasa a una actividad, donde esta el formulario para reservar", Toast.LENGTH_SHORT).show()
-                var intent = Intent(context,Form_reservarActivity::class.java)
+                var intent = Intent(context, Form_reservarActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 intent.putExtra("id_hab", habitacion.id)
                 intent.putExtra("Tipo", habitacion.titulo)
                 intent.putExtra("Descripcion", habitacion.descripcion)
                 intent.putExtra("Precio", habitacion.precio)
-                //intent.putExtra("foto", habitacion.foto)
+                intent.putExtra("foto", habitacion.imagen)
                 context.startActivity(intent)
-                //finish()
+
             }
         }
     }
