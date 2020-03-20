@@ -1,13 +1,16 @@
 package com.ricardotangarife.traveltosanto.utils.botton_navegation
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ricardotangarife.traveltosanto.R
+import com.ricardotangarife.traveltosanto.utils.fragment_bottom_navegation.PerfilFragment
+
 
 class InicioActivity : AppCompatActivity() {
 

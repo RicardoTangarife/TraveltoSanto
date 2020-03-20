@@ -1,13 +1,21 @@
 package com.ricardotangarife.traveltosanto.utils.RV_hab
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
+import com.ricardotangarife.traveltosanto.MainActivity
 import com.ricardotangarife.traveltosanto.R
+import com.ricardotangarife.traveltosanto.utils.botton_navegation.InicioActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_form_reservar.*
+import kotlinx.android.synthetic.main.activity_form_reservar.img_habitacion
+import kotlinx.android.synthetic.main.activity_form_reservar.tv_descripcion
+import kotlinx.android.synthetic.main.activity_form_reservar.tv_precio
+import kotlinx.android.synthetic.main.activity_form_reservar.tv_tipo
+import kotlinx.android.synthetic.main.item_plazareal.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -94,35 +102,25 @@ class Form_reservarActivity : AppCompatActivity() {
         tv_precio.text = precio.toString()
         Picasso.get().load(foto).into(img_habitacion)
         var ingreso = tv_showPicker.text.toString()
-        val salida = tv_showPicker2.text.toString()
-
-
-        if (ingreso != "Fecha de Ingreso" && salida != "Fecha de Salida"){
-          //  preciohab = precio * (fin - inicio)
+        var salida = tv_showPicker2.text.toString()
+        tv_precioreserva.text = tv_precio.text
+        if((ingreso != "Fecha de Ingreso") && (salida != "Fecha de Salida")){
+           // preciohab = precio * (fin - inicio)
+            // tv_precioreserva.text = preciohab.toString()
         }
-        tv_precioreserva.text = ingreso
+
 
         bt_reserva.setOnClickListener{
-
             val database = FirebaseDatabase.getInstance()
             val myRef = database.getReference("reservas")
-
-            val nombre = et_Nombre.text.toString()
-            val cc = et_cedula.text.toString().toInt()
-            val correo = et_correo.text.toString()
-
-            val precio = tv_precio.text.toString().toInt()
-            val password = et_password.text.toString()
-
-
-            if (nombre.isEmpty() || correo.isEmpty()){
-                Toast.makeText( this, "Debe digitar todos los campos", Toast.LENGTH_SHORT).show()
-            }
-            else {
-
-
+            if(!(et_Nombre.text.toString().isEmpty())&&!(et_cedula.text.toString().isEmpty())&& !(et_correo.text.toString().isEmpty())&& !(et_password.text.toString().isEmpty())){
+                tv_precioreserva.text = tv_precio.text
+                val nombre = et_Nombre.text.toString()
+                val cc = et_cedula.text.toString().toInt()
+                val correo = et_correo.text.toString()
+                val precio = tv_precio.text.toString().toInt()
+                val password = et_password.text.toString()
                 val idReservar = myRef.push().key
-
                 val reserva = com.ricardotangarife.traveltosanto.model.Reservar(
                     idReservar!!,
                     nombre,
@@ -133,12 +131,17 @@ class Form_reservarActivity : AppCompatActivity() {
                     precio,
                     false
                 )
-
                 myRef.child(idReservar).setValue(reserva)
-
                 Toast.makeText(this, "Reserva Completa", Toast.LENGTH_SHORT).show()
+                var intent = Intent(this, InicioActivity::class.java)
+                intent.putExtra("frg", "profile")
+                this.startActivity(intent)
+                finish()
             }
+            else{
+                Toast.makeText( this, "Debe digitar todos los campos", Toast.LENGTH_SHORT).show()
             }
+        }
     }
 }
 

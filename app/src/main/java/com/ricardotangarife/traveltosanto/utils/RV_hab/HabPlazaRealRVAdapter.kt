@@ -65,7 +65,6 @@ class HabPlazaRealRVAdapter(
                 intent.putExtra("Precio", habitacion.precio)
                 intent.putExtra("foto", habitacion.imagen)
                 context.startActivity(intent)
-
             }
         }
     }
