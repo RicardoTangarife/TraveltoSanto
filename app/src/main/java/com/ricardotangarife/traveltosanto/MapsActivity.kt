@@ -1,9 +1,11 @@
 package com.ricardotangarife.traveltosanto
 
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GooglePlayServicesUtil
 
@@ -53,6 +55,18 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val principalSanto = LatLng(6.471279, -75.164492)
         mMap.moveCamera(CameraUpdateFactory.newLatLng(principalSanto))
         mMap.animateCamera(CameraUpdateFactory.zoomTo(18.0f));
+        if(ActivityCompat.checkSelfPermission(
+                this,  //activity!!.applicationContext
+                android.Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ){
+            ActivityCompat.requestPermissions(
+                this,arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
+                LOCATION_PERMISSION_REQUEST_CODE
+            )
+            return
+        }
+        mMap.isMyLocationEnabled = true
         val database = FirebaseDatabase.getInstance()
         if(Tipo != ""){
             val myRef = database.getReference(Tipo)
@@ -74,6 +88,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 mMap.animateCamera(CameraUpdateFactory.zoomTo(11.0f));
             }
         }
-
+    }
+    companion object{
+        const val  LOCATION_PERMISSION_REQUEST_CODE = 1
     }
 }
