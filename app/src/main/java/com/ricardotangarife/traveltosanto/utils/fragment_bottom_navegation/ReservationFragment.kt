@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DataSnapshot
@@ -50,57 +51,7 @@ class  ReservationFragment : Fragment() {
 
         root.rv_habitPlazaReal.setHasFixedSize(true)
         root.rv_habitPlazaReal.adapter = habPlazaRealRVAdapter
-        /*
-        var habPlazaRealList: MutableList<HabPlazaReal> = ArrayList()
 
-        habPlazaRealList.add(
-            HabPlazaReal(
-                 "Habitación Básica",
-            "Cama doble" + "\n" +
-                       "3 días y 2 noches",
-                "$150.000",
-                        R.drawable.hab3)
-        )
-
-        habPlazaRealList.add(
-            HabPlazaReal(
-                "Habitación Doble",
-            "2 Camas Medianas" + "\n" +
-                    "3 días y 2 noches",
-                "$200.000",
-                    R.drawable.hab4)
-        )
-
-        habPlazaRealList.add(
-            HabPlazaReal(
-                "Habitación Premium",
-            "Cama doble," + "\n"+
-                    "3 días y 2 noches",
-                "$180.000",
-                R.drawable.hab1)
-        )
-
-        habPlazaRealList.add(
-            HabPlazaReal(
-                "Habitación Simple",
-                "Cama sensilla"+ "\n"+
-                        "2 día y 1 noche",
-                "80.000",
-                R.drawable.hab2)
-        )
-
-        root.rv_habitPlazaReal.setHasFixedSize(true)
-        root.rv_habitPlazaReal.layoutManager = LinearLayoutManager(
-            activity?.applicationContext,
-            RecyclerView.VERTICAL,
-            false)
-
-        val habplazarealRVAdapter = HabPlazaRealRVAdapter(
-            activity!!.applicationContext,
-            habPlazaRealList as ArrayList)
-
-        root.rv_habitPlazaReal.adapter = habplazarealRVAdapter
-*/
         return root
 
 
@@ -120,7 +71,9 @@ class  ReservationFragment : Fragment() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 for(snapshot in dataSnapshot.children){
                     var hab: Habitacion?= snapshot.getValue(Habitacion::class.java)
-                    allHabitaciones.add(hab!!)
+                    if (hab?.visibilidad == true){
+                        allHabitaciones.add(hab!!)
+                    }
 
                 }
                 habPlazaRealRVAdapter.notifyDataSetChanged()

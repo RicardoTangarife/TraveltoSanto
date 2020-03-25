@@ -12,10 +12,13 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
 import com.ricardotangarife.traveltosanto.model.User
+import com.ricardotangarife.traveltosanto.model.room.Usuario
+import com.ricardotangarife.traveltosanto.model.room.UsuarioDAO
 //import com.ricardotangarife.traveltosanto.utils.Constantes.Companion.EMPTY
 //import com.ricardotangarife.traveltosanto.utils.Constantes.Companion.INTERLINE
 //import com.ricardotangarife.traveltosanto.utils.Constantes.Companion.SPACE
 import kotlinx.android.synthetic.main.activity_registro.*
+import java.sql.Types.NULL
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.regex.Matcher
@@ -54,6 +57,7 @@ class RegistroActivity : AppCompatActivity() {
                                     Log.d("LoginActivity1", "signInWithEmail:success")
                                     val user = auth.currentUser
                                     createUserDatabase(user,nombre,telefono)
+                                    crearUsuarioRoom(nombre, correo)
                                     goToLoginActicity()
                                     Toast.makeText(this, "Usuario registrado correctamente", Toast.LENGTH_SHORT).show()
                                 } else {
@@ -88,6 +92,12 @@ class RegistroActivity : AppCompatActivity() {
         val myRef = database.getReference("usuarios")
         val usuario = User(user!!.uid, user!!.email.toString(), name,movil)
         myRef.child(user!!.uid).setValue(usuario)
+    }
+
+    private fun crearUsuarioRoom(nombre: String, correo: String){
+        val usuario = Usuario("id", nombre, "drawable")
+        val usuarioDao = SesionRoom.database.UsuarioDAO()
+        usuarioDao.insertUsuario(usuario)
     }
     private fun goToLoginActicity(){
         var intentlogin = Intent(this, LoginActivity::class.java)

@@ -8,16 +8,21 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-feature android:name="android.hardware.camera2"/>
 
     <application
         android:allowBackup="true"
+        android:name=".SesionRoom"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".utils.RV_hab.Form_reservarActivity"></activity>
+
+
+        <activity android:name=".utils.RV_hab.Form_reservarActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -35,19 +40,25 @@
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".utils.botton_navegation.InicioActivity"
-            android:label="@string/title_activity_inicio">
-
-        </activity>
+            android:label="@string/title_activity_inicio"
+            android:theme="@style/AppTheme"></activity>
         <activity android:name=".RegistroActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
