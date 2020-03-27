@@ -63,6 +63,7 @@ class  ReservationFragment : Fragment() {
     }
 
     private fun cargarHabitaciones() {
+        var hab = Habitacion()
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("habitaciones")
         allHabitaciones.clear()
@@ -70,15 +71,13 @@ class  ReservationFragment : Fragment() {
         myRef.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 for(snapshot in dataSnapshot.children){
-                    var hab: Habitacion?= snapshot.getValue(Habitacion::class.java)
-                    if (hab?.visibilidad == true){
+                    hab = snapshot.getValue(Habitacion::class.java)!!
+                    if (hab!!.visibilidad){
                         allHabitaciones.add(hab!!)
                     }
-
                 }
                 habPlazaRealRVAdapter.notifyDataSetChanged()
             }
-
             override fun onCancelled(error: DatabaseError) {
                 Log.w("Lista", "Failed to read value", error.toException())
             }

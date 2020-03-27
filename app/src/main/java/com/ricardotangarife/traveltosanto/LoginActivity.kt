@@ -1,6 +1,5 @@
 package com.ricardotangarife.traveltosanto
 
-import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +8,7 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.ricardotangarife.traveltosanto.utils.botton_navegation.InicioActivity
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_login.et_correo
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 

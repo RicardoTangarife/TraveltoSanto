@@ -56,8 +56,8 @@
     <string name="bares">Bares</string>
     <string name="prueba_perfil">Fragmento para perfil, donde se tendrá información básica del usuario, las reservar realizadas y los lugares que ha visitado</string>
     <string name="prueba_inicio">Este fragmento es para el inicio, tendra el mapa en la parte superiror, luego tendrá botones para mostrar mapas con ubicaciones especificas y por ultimo contendrá información, como videos imagenes y sitios recomendados del pueblo</string>
-    <string name="formato">MM/dd/yyyy</string>
     <string name="pick_date">pick_date</string>
+    <string name="formato">MM/dd/yyyy</string>
     <string name="fecha">Fecha de reservación</string>
     <string name="c_dula">Cédula</string>
     <string name="contrase_a">Contraseña</string>

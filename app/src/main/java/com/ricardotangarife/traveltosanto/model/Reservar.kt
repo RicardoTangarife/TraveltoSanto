@@ -14,6 +14,5 @@ class Reservar (
     @ColumnInfo(name = "fecha_ingreso") val fecha_ingreso : String = "",
     @ColumnInfo(name = "fecha_salida") val fecha_salida : String = "",
     @ColumnInfo(name = "precio") val precio : Int = 0,
-    @ColumnInfo(name = "visibilidad") val visibilidad: Boolean = false
-
-    )
+    @ColumnInfo(name = "telefono") val telefono : String = ""
+)

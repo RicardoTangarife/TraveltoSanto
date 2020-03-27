@@ -1,25 +1,20 @@
 package com.ricardotangarife.traveltosanto
 
 import android.app.Activity
-import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.DatePicker
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
 import com.ricardotangarife.traveltosanto.model.User
 import com.ricardotangarife.traveltosanto.model.room.Usuario
-import com.ricardotangarife.traveltosanto.model.room.UsuarioDAO
 //import com.ricardotangarife.traveltosanto.utils.Constantes.Companion.EMPTY
 //import com.ricardotangarife.traveltosanto.utils.Constantes.Companion.INTERLINE
 //import com.ricardotangarife.traveltosanto.utils.Constantes.Companion.SPACE
 import kotlinx.android.synthetic.main.activity_registro.*
-import java.sql.Types.NULL
-import java.text.SimpleDateFormat
 import java.util.*
 import java.util.regex.Matcher
 import java.util.regex.Pattern
