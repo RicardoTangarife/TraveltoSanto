@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
 import com.ricardotangarife.traveltosanto.model.User
-import com.ricardotangarife.traveltosanto.model.room.Usuario
+import com.ricardotangarife.traveltosanto.model.room.Reserva
 //import com.ricardotangarife.traveltosanto.utils.Constantes.Companion.EMPTY
 //import com.ricardotangarife.traveltosanto.utils.Constantes.Companion.INTERLINE
 //import com.ricardotangarife.traveltosanto.utils.Constantes.Companion.SPACE
@@ -52,7 +52,7 @@ class RegistroActivity : AppCompatActivity() {
                                     Log.d("LoginActivity1", "signInWithEmail:success")
                                     val user = auth.currentUser
                                     createUserDatabase(user,nombre,telefono)
-                                    crearUsuarioRoom(nombre, correo)
+                                    /*crearUsuarioRoom(nombre, correo)*/
                                     goToLoginActicity()
                                     Toast.makeText(this, "Usuario registrado correctamente", Toast.LENGTH_SHORT).show()
                                 } else {
@@ -89,11 +89,11 @@ class RegistroActivity : AppCompatActivity() {
         myRef.child(user!!.uid).setValue(usuario)
     }
 
-    private fun crearUsuarioRoom(nombre: String, correo: String){
+    /*private fun crearUsuarioRoom(nombre: String, correo: String){
         val usuario = Usuario("id", nombre, "drawable")
         val usuarioDao = SesionRoom.database.UsuarioDAO()
         usuarioDao.insertUsuario(usuario)
-    }
+    }*/
     private fun goToLoginActicity(){
         var intentlogin = Intent(this, LoginActivity::class.java)
         startActivity(intentlogin)

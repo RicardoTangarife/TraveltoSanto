@@ -73,4 +73,7 @@
     <string name="error_msg_login_conection">A network error (such as timeout, interrupted connection or unreachable host) has occurred.</string>
     <string name="error_msg_incorrect_pass">The password is invalid or the user does not have a password.</string>
     <string name="olvide_pass">Olvidaste tu contraseña</string>
+    <string name="tus_reservas">RESERVAS PREVIAS</string>
+    <string name="ingreso">Ingreso:</string>
+    <string name="salida">Salida:</string>
 </resources>

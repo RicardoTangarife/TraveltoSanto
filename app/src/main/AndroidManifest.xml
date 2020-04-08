@@ -41,7 +41,7 @@
         <activity
             android:name=".utils.botton_navegation.InicioActivity"
             android:label="@string/title_activity_inicio"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme"/>
         <activity android:name=".RegistroActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>

@@ -14,9 +14,12 @@ import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 //import com.google.firebase.storage.FirebaseStorage
 //import com.google.firebase.storage.StorageReference
 //import com.google.firebase.storage.UploadTask
@@ -25,7 +28,9 @@ import com.ricardotangarife.traveltosanto.LoginActivity
 import com.ricardotangarife.traveltosanto.R
 import com.ricardotangarife.traveltosanto.SesionRoom
 import com.ricardotangarife.traveltosanto.model.User
-import com.ricardotangarife.traveltosanto.model.room.Usuario
+import com.ricardotangarife.traveltosanto.model.room.Reserva
+import com.ricardotangarife.traveltosanto.model.room.ReservaDAO
+import com.ricardotangarife.traveltosanto.model.room.ReservasRVAdapter
 import kotlinx.android.synthetic.main.fragment_perfil.*
 import kotlinx.android.synthetic.main.fragment_perfil.view.*
 import java.io.ByteArrayOutputStream
@@ -36,36 +41,46 @@ import java.sql.Types.NULL
  */
 class PerfilFragment : Fragment() {
 
+    var allReservas: List<Reserva>  = emptyList()
     val idUsuario = "primero"
     @SuppressLint("IntentReset")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         // Inflate the layout for this fragment
         var root = inflater.inflate(R.layout.fragment_perfil, container, false)
 
-        root.bt_preuba.setOnClickListener {
-
-            //leer_room()
-     //       saveImage()
-
-        }
+        val auth = FirebaseAuth.getInstance()
+        val currentUser: FirebaseUser? = auth.currentUser
+        root.tv_correo.text = auth.currentUser?.email
 
 
-
+        val rv_reservas : RecyclerView = root.findViewById<RecyclerView>(R.id.rv_tusreservas)
+        rv_reservas.layoutManager = LinearLayoutManager(
+            activity!!.applicationContext,
+            RecyclerView.VERTICAL,
+            false
+        )
+        rv_reservas.setHasFixedSize(true)
+        var reservaDAO: ReservaDAO = SesionRoom.database.ReservaDAO()
+        var allReservas: List<Reserva> = reservaDAO.getReservas()
+        var reserRVAdapter = ReservasRVAdapter(
+            activity!!.applicationContext,
+            allReservas as ArrayList<Reserva>
+        )
+        rv_reservas.adapter = reserRVAdapter
+        reserRVAdapter.notifyDataSetChanged()
 
         root.bt_cerrar_sesion.setOnClickListener {
             val auth = FirebaseAuth.getInstance()
             auth.signOut()
             goToLoginActicity()
         }
-
         //val database = FirebaseDatabase.getInstance().reference
 
 
-        root.profile_image.setOnClickListener{
+       /* root.profile_image.setOnClickListener{
             var alertDialog = activity?.let{
                 val builder = AlertDialog.Builder(it)
                 builder.apply {
@@ -91,9 +106,7 @@ class PerfilFragment : Fragment() {
             val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             intent.type = "image/*"
             startActivityForResult(intent, 12)
-        }
-
-
+        }*/*/
         return root
     }
 /*
@@ -148,11 +161,11 @@ class PerfilFragment : Fragment() {
         }
     }
 
-    private fun leer_room() {
+   /* private fun leer_room() {
         val usuarioDAO = SesionRoom.database.UsuarioDAO()
         val usuario = usuarioDAO.searchUsuario("Juan")
         tv_nombre.text = usuario.nombre
-        }
+    }*/
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

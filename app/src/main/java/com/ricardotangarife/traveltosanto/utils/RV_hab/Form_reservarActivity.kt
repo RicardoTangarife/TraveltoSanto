@@ -16,7 +16,9 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.ricardotangarife.traveltosanto.LoginActivity
 import com.ricardotangarife.traveltosanto.R
+import com.ricardotangarife.traveltosanto.SesionRoom
 import com.ricardotangarife.traveltosanto.model.Habitacion
+import com.ricardotangarife.traveltosanto.model.room.Reserva
 import com.ricardotangarife.traveltosanto.utils.botton_navegation.InicioActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_form_reservar.*
@@ -165,11 +167,22 @@ class Form_reservarActivity : AppCompatActivity() {
                         nombre,
                         id_hab,
                         cc,
-                        ingreso,
-                        salida,
+                        tv_showPicker.text.toString(),
+                        tv_showPicker2.text.toString(),
                         precio,
                         telefono
                     )
+                    var reservaR = Reserva(
+                        idReservar!!,
+                        auth.uid.toString(),
+                        Tipo,
+                        Descripcion,
+                        tv_showPicker.text.toString(),
+                        tv_showPicker2.text.toString(),
+                        precio
+                    )
+                    val reservaDAO = SesionRoom.database.ReservaDAO()
+                    reservaDAO.insertReserva(reservaR)
                     myRef.child(idReservar).setValue(reserva)
                     var hab = Habitacion()
                     val Refhab = database.getReference("habitaciones")
@@ -192,6 +205,7 @@ class Form_reservarActivity : AppCompatActivity() {
                             )
                         }
                     })
+
                     Toast.makeText(this, "Reserva Completa", Toast.LENGTH_SHORT).show()
                     var intent = Intent(this, InicioActivity::class.java)
                     intent.putExtra("frg", "profile")
