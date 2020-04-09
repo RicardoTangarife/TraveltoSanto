@@ -76,4 +76,5 @@
     <string name="tus_reservas">RESERVAS PREVIAS</string>
     <string name="ingreso">Ingreso:</string>
     <string name="salida">Salida:</string>
+    <string name="noreservas">Aún no ha realizado reservas</string>
 </resources>

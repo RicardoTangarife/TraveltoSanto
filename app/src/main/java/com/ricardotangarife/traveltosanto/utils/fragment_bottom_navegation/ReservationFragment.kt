@@ -72,8 +72,8 @@ class  ReservationFragment : Fragment() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 for(snapshot in dataSnapshot.children){
                     hab = snapshot.getValue(Habitacion::class.java)!!
-                    if (hab!!.visibilidad){
-                        allHabitaciones.add(hab!!)
+                    if (hab.visibilidad){
+                        allHabitaciones.add(hab)
                     }
                 }
                 habPlazaRealRVAdapter.notifyDataSetChanged()

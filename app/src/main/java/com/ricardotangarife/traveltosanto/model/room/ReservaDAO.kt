@@ -13,6 +13,9 @@ interface ReservaDAO {
     @Query("SELECT * FROM tabla_reservas WHERE id_user LIKE :id")
     fun searchReservas(id:String): Reserva
 
+    @Query("SELECT * FROM tabla_reservas WHERE id_user LIKE :id")
+    fun getReservasUser(id:String)  : List<Reserva>
+
     @Query("SELECT * FROM tabla_reservas")
     fun getReservas()  : List<Reserva>
 

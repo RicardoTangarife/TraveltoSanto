@@ -43,7 +43,13 @@ dependencies {
     //firebase
     implementation 'com.google.firebase:firebase-database:16.0.4'
     implementation 'com.google.firebase:firebase-auth:16.0.4'
-  //  implementation 'com.google.firebase:firebase-storage:18.0.0'
+    //Google
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    //Facebook
+    //implementation 'com.facebook.android:facebook-login:5.15.3'
+
+
+    //  implementation 'com.google.firebase:firebase-storage:18.0.0'
     annotationProcessor "androidx.room:room-compiler:$roomVersion"
 
     debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'

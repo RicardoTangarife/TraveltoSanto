@@ -9,55 +9,72 @@
     tools:context=".LoginActivity">
 
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="192dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="8dp"
-        app:srcCompat="@drawable/logo" />
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/et_correo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:ems="10"
-        android:hint="@string/correo_electronico"
-        android:inputType="textEmailAddress" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/et_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="192dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="8dp"
+                app:srcCompat="@drawable/logo" />
 
-    <Button
-        android:id="@+id/bt_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="#7C4AC3AB"
-        android:text="@string/iniciar_sesion" />
+            <EditText
+                android:id="@+id/et_correo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:ems="10"
+                android:hint="@string/correo_electronico"
+                android:inputType="textEmailAddress" />
 
-    <Button
-        android:id="@+id/bt_register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="#7DBEF1"
-        android:text="@string/registrarse" />
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:ems="10"
+                android:hint="@string/password"
+                android:inputType="textPassword" />
 
-    <TextView
-        android:id="@+id/tv_recuperar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:gravity="center"
-        android:text="@string/olvide_pass"
-        android:textColor="#5053BE"
-        android:textStyle="bold" />
+            <Button
+                android:id="@+id/bt_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="#7C4AC3AB"
+                android:text="@string/iniciar_sesion" />
+
+            <com.google.android.gms.common.SignInButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bt_google" />
+
+            <Button
+                android:id="@+id/bt_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="#7DBEF1"
+                android:text="@string/registrarse" />
+
+            <TextView
+                android:id="@+id/tv_recuperar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:text="@string/olvide_pass"
+                android:textColor="#5053BE"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>

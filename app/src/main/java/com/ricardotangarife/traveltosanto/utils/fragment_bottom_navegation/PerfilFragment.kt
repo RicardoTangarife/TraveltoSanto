@@ -12,6 +12,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.view.*
+import android.view.View.VISIBLE
 import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -55,7 +56,6 @@ class PerfilFragment : Fragment() {
         val currentUser: FirebaseUser? = auth.currentUser
         root.tv_correo.text = auth.currentUser?.email
 
-
         val rv_reservas : RecyclerView = root.findViewById<RecyclerView>(R.id.rv_tusreservas)
         rv_reservas.layoutManager = LinearLayoutManager(
             activity!!.applicationContext,
@@ -64,7 +64,10 @@ class PerfilFragment : Fragment() {
         )
         rv_reservas.setHasFixedSize(true)
         var reservaDAO: ReservaDAO = SesionRoom.database.ReservaDAO()
-        var allReservas: List<Reserva> = reservaDAO.getReservas()
+        var allReservas: List<Reserva> = reservaDAO.getReservasUser(auth.currentUser?.uid.toString())
+        if(allReservas.isEmpty()){
+            root.tv_noreservas.visibility = VISIBLE
+        }
         var reserRVAdapter = ReservasRVAdapter(
             activity!!.applicationContext,
             allReservas as ArrayList<Reserva>
