@@ -4,12 +4,16 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
@@ -21,6 +25,7 @@ import java.util.regex.Pattern
 class LoginActivity : AppCompatActivity() {
 
     lateinit var googleSignInClient: GoogleSignInClient
+    lateinit var mGoogleApiClient: GoogleApiClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,11 +38,19 @@ class LoginActivity : AppCompatActivity() {
             .requestEmail()
             .build()
 
+        mGoogleApiClient = GoogleApiClient.Builder(applicationContext)
+            .enableAutoManage(this, GoogleApiClient.OnConnectionFailedListener(){
+                GoogleApiClient.OnConnectionFailedListener() {
+                    Toast.makeText(this, "Error en Login google", Toast.LENGTH_SHORT).show();
+                }
+            })
+            .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+            .build()
+
         // Build a GoogleSignInClient with the options specified by gso.
-        googleSignInClient = GoogleSignIn.getClient(this, gso);
 
         bt_google.setOnClickListener{
-            val signInIntent = googleSignInClient.signInIntent
+            val signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient)
             startActivityForResult(signInIntent, 101)
         }
 
@@ -118,7 +131,15 @@ class LoginActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == 101) {
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            val result = Auth.GoogleSignInApi.getSignInResultFromIntent(data)
+            if(result.isSuccess){
+                val account = result.signInAccount
+                firebaseAuthWithGoogle(account!!)
+            }
+            else{
+                Toast.makeText(this, "Conexión con cuenta Google fallida", Toast.LENGTH_SHORT).show()
+            }
+            /*val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             try {
                 // Google Sign In was successful, authenticate with Firebase
                 val account = task.getResult(ApiException::class.java)
@@ -127,7 +148,8 @@ class LoginActivity : AppCompatActivity() {
                 // Google Sign In failed, update UI appropriately
                 Toast.makeText(this, "Conexión con cuenta Google fallida", Toast.LENGTH_SHORT).show()
                 // ...
-            }
+            }*/
+
         }
     }
     private fun firebaseAuthWithGoogle(account: GoogleSignInAccount) {
