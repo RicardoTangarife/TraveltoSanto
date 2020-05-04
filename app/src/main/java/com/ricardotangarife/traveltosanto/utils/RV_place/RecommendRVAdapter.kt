@@ -1,13 +1,16 @@
 package com.ricardotangarife.traveltosanto.utils.RV_place
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.ricardotangarife.traveltosanto.R
-import kotlinx.android.synthetic.main.item_recommend.view.*
+import com.ricardotangarife.traveltosanto.utils.RV_LugEmble.Emblematico
+import com.ricardotangarife.traveltosanto.utils.RV_LugEmble.TurismoDetalleActivity
+import kotlinx.android.synthetic.main.item_emblematico.view.*
+
 
 class RecommendRVAdapter (
     var context: Context,
@@ -17,7 +20,7 @@ class RecommendRVAdapter (
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int): RecommendViewHolder {
-        var itemView = LayoutInflater.from(context).inflate(R.layout.item_recommend, parent, false)
+        var itemView = LayoutInflater.from(context).inflate(R.layout.item_emblematico, parent, false)
         return RecommendViewHolder(itemView, context)
     }
 
@@ -41,8 +44,23 @@ class RecommendRVAdapter (
         }
 
         fun bindRecommend (recommend: Recommend){
-            itemView.tv_recommend.text = recommend.title_recommend
-            itemView.img_recommend.setImageResource(recommend.img_Recommend)
+            itemView.tv_emblematico.text = recommend.title_recommend
+            itemView.img_vista.setImageResource(recommend.img_Recommend)
+
+            itemView.setOnClickListener{
+                var intent = Intent(context, TurismoDetalleActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                intent.putExtra("img_title", recommend.title_recommend)
+                intent.putExtra("img", recommend.img_Recommend)
+                intent.putExtra("name_data", recommend.name_data)
+                intent.putExtra("name_data2", recommend.name_data2)
+
+                context.startActivity(intent)
+
+
+            }
+
+
         }
     }
 

@@ -24,10 +24,10 @@
             android:layout_width="match_parent"
             android:layout_height="78dp"
             android:layout_marginBottom="2dp"
-            android:background="#EDEDED">
+            android:background="#FFF">
 
             <ImageView
-                android:id="@+id/img_recommend"
+                android:id="@+id/img_vista"
                 android:layout_width="112dp"
                 android:layout_height="76dp"
                 app:layout_constraintStart_toStartOf="parent"

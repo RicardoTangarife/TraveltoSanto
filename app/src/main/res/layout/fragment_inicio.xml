@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/aliceblue"
     tools:context=".utils.fragment_bottom_navegation.InicioFragment">
 
     <ScrollView
@@ -119,17 +120,55 @@
             </TableLayout>
 
             <TextView
-                android:id="@+id/tv_recomendado"
+                android:id="@+id/textView2"
+                style="@android:style/Widget.Holo.TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:text="Recomendados"
-                android:textColor="#000000"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="3dp"
+                android:text="Sitios Caracteristicos"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_emblematicos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp" />
+
+            <TextView
+                android:id="@+id/textView"
+                style="@android:style/Widget.Holo.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="3dp"
+                android:text="Sitios Turisticos"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_places"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/cultural"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_cultural"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <VideoView
+                android:id="@+id/videoView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 

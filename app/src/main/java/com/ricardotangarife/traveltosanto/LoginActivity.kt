@@ -122,11 +122,13 @@ class LoginActivity : AppCompatActivity() {
             goToMainActicity()
         }
     }
+
     private fun goToMainActicity() {
         var intentmain = Intent(this, InicioActivity::class.java)
         startActivity(intentmain)
         finish()
     }
+
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
@@ -164,7 +166,7 @@ class LoginActivity : AppCompatActivity() {
                     goToMainActicity()
                 } else {
                     // If sign in fails, display a message to the user.
-                    Toast.makeText(this, "Conexión con cuenta Google fallida", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Conexión con cuenta Google fallida-", Toast.LENGTH_SHORT).show()
                     //updateUI(null)
                 }
             }
