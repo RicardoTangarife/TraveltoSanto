@@ -5,12 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="8dp"
-    android:background="@drawable/santo3"
+    android:background="@color/aliceblue"
     tools:context=".RegistroActivity">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,52 +30,51 @@
                 android:textStyle="bold" />
 
 
-
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/et_nombre"
-                android:background="@drawable/radius"
                 style="@style/margen"
-                android:inputType="text"
-                android:hint="@string/digite_el_nombre"/>
-
-            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/radius"
+                android:hint="@string/digite_el_nombre"
+                android:inputType="text" />
+
+            <EditText
                 android:id="@+id/et_correo"
-                android:background="@drawable/radius"
                 style="@style/margen"
-                android:inputType="textEmailAddress"
-                android:hint="@string/correo_electronico"/>
-
-            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/radius"
+                android:hint="@string/correo_electronico"
+                android:inputType="textEmailAddress" />
+
+            <EditText
                 android:id="@+id/et_telefono"
-                android:background="@drawable/radius"
                 style="@style/margen"
-                android:inputType="number"
-                android:hint="@string/telefono"/>
-
-            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/radius"
+                android:hint="@string/telefono"
+                android:inputType="number" />
+
+            <EditText
                 android:id="@+id/et_password"
-                android:background="@drawable/radius"
                 style="@style/margen"
-                android:inputType="textPassword"
-                android:hint="@string/password"/>
-
-            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/et_reppassword"
                 android:background="@drawable/radius"
+                android:hint="@string/password"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/et_reppassword"
                 style="@style/margen"
-                android:inputType="textPassword"
-                android:hint="@string/repetir_password"/>
-<!--
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radius"
+                android:hint="@string/repetir_password"
+                android:inputType="textPassword" />
+            <!--
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

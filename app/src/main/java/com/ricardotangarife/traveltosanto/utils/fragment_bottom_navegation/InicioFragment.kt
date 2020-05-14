@@ -10,7 +10,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.MediaController
-import android.widget.VideoView
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,12 +22,10 @@ import com.ricardotangarife.traveltosanto.MapsActivity
 import com.ricardotangarife.traveltosanto.R
 import com.ricardotangarife.traveltosanto.utils.RV_LugEmble.Emblematico
 import com.ricardotangarife.traveltosanto.utils.RV_LugEmble.EmblematicoRVAdapter
-import com.ricardotangarife.traveltosanto.utils.RV_LugEmble.EmblematicoVistaRVA
 import com.ricardotangarife.traveltosanto.utils.RV_place.Recommend
 import com.ricardotangarife.traveltosanto.utils.RV_place.RecommendRVAdapter
 import kotlinx.android.synthetic.main.fragment_inicio.*
 import kotlinx.android.synthetic.main.fragment_inicio.view.*
-import kotlinx.android.synthetic.main.fragment_inicio.view.videoView
 
 /**
  * A simple [Fragment] subclass.
@@ -62,7 +59,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
         var recommendList: MutableList<Recommend> = ArrayList()
         recommendList.add(
             Recommend(
-                R.drawable.s_tunel,
+                R.drawable.i_st_tunel,
             "Tunel de la quiebra",
                 "i_tunel",
                 "f_tunel"
@@ -71,7 +68,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
         )
         recommendList.add(
             Recommend(
-                R.drawable.cascada,
+                R.drawable.i_st_cascada,
                 "Termales",
                 "i_termales",
                 "f_termales"
@@ -80,7 +77,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         recommendList.add(
             Recommend(
-                R.drawable.sitio,
+                R.drawable.i_st_monta,
                 "Obra: Motaña Embarazada",
             "i_montaña",
                 "f_montaña"
@@ -90,7 +87,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         recommendList.add(
             Recommend(
-                R.drawable.s_casatomas3,
+                R.drawable.i__st_tomas,
                 "Casa Museo Tomás Carrasquilla",
             "i_casa",
                 "f_casa"
@@ -117,7 +114,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         emblematicoList.add(
             Emblematico(
-                R.drawable.s_cabecera,
+                R.drawable.i_sc_parque,
                 "Iglesia y Parque Principal",
             "f_iglesia"
             )
@@ -126,7 +123,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         emblematicoList.add(
             Emblematico(
-                R.drawable.s_colegio,
+                R.drawable.i_sc_colegio,
                 "Colegio",
                 "f_colegio"
             )
@@ -134,7 +131,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         emblematicoList.add(
             Emblematico(
-                R.drawable.charco3,
+                R.drawable.i_sc_charco,
                 "Charcos",
                 "f_charcos"
             )
@@ -143,7 +140,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         emblematicoList.add(
             Emblematico(
-                R.drawable.s_feria,
+                R.drawable.i_sc_feria,
                 "Feria",
             "f_feria"
             )
@@ -151,7 +148,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         emblematicoList.add(
             Emblematico(
-                R.drawable.s_entrada,
+                R.drawable.i_sc_entrada,
                 "Entrada Principal",
                 "f_entrada"
             )
@@ -159,7 +156,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         emblematicoList.add(
             Emblematico(
-                R.drawable.hospital,
+                R.drawable.i_sc_hospital,
                 "Hospital",
                 "f_hospital"
             )
@@ -167,7 +164,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         emblematicoList.add(
             Emblematico(
-                R.drawable.paisaje2,
+                R.drawable.i_sc_paisaje,
                 "Paisaje",
                 "f_paisaje"
             )
@@ -175,7 +172,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         emblematicoList.add(
             Emblematico(
-                R.drawable.s_piscina,
+                R.drawable.i_sc_piscina,
                 "Piscina",
                 "f_piscina"
             )
@@ -183,7 +180,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         emblematicoList.add(
             Emblematico(
-                R.drawable.corregimiento4,
+                R.drawable.i_sc_corregimiento,
                 "Corregimientos",
             "f_corregimientos"
             )
@@ -210,7 +207,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         detalleList.add(
             Emblematico(
-                R.drawable.semanap,
+                R.drawable.i_sc_santa,
                 "Semana Santa",
                 "f_santa"
             )
@@ -218,7 +215,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         detalleList.add(
             Emblematico(
-                R.drawable.san_isidro,
+                R.drawable.i_sc_isidro,
                 "San Isidro",
                 "f_isidro"
             )
@@ -226,7 +223,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         detalleList.add(
             Emblematico(
-                R.drawable.velitasp,
+                R.drawable.i_sc_velitas,
                 "Día de las velitas",
                 "f_velitas"
             )
@@ -234,7 +231,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         detalleList.add(
             Emblematico(
-                R.drawable.virgenp,
+                R.drawable.i_sc_virgen,
                 "Fiesta de la Virgen",
                 "f_virgen"
             )
@@ -242,7 +239,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         detalleList.add(
             Emblematico(
-                R.drawable.antioquiap,
+                R.drawable.i_c_antioquia,
                 "Día de la Antioqueñidad",
                 "f_antioquia"
             )
@@ -250,7 +247,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         detalleList.add(
             Emblematico(
-                R.drawable.campesino5,
+                R.drawable.i_c_campesino,
                 "Día del Campesino",
                 "f_campesino"
             )
@@ -258,7 +255,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         detalleList.add(
             Emblematico(
-                R.drawable.fiesta12,
+                R.drawable.i_c_fiesta1,
                 "Fiesta del Chalan",
             "f_fiesta"
             )
@@ -266,7 +263,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         detalleList.add(
             Emblematico(
-                R.drawable.mascota11,
+                R.drawable.i_sc_mascota,
                 "Mascotas",
                 "f_mascotas"
             )
@@ -274,7 +271,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         detalleList.add(
             Emblematico(
-                R.drawable.niop,
+                R.drawable.i_sc_nino,
                 "Día del niño",
                 "f_niños"
             )
@@ -282,7 +279,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
         detalleList.add(
             Emblematico(
-                R.drawable.saludp,
+                R.drawable.i_sc_salud,
                 "Deporte",
                 "f_salud"
             )
@@ -351,7 +348,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-         val video : Uri = Uri.parse("http://techslides.com/demos/sample-videos/small.mp4")
+         val video : Uri = Uri.parse("http://www.ebookfrenzy.com/android_book/movie.mp4")
         videoView.setVideoURI(video)
         videoView.setMediaController(MediaController(activity))
         videoView.start()
