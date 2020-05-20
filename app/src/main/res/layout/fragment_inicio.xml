@@ -1,178 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScrollView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/aliceblue"
-    tools:context=".utils.fragment_bottom_navegation.InicioFragment">
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="58dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_margin="8dp">
 
-            <com.google.android.gms.maps.MapView
-                android:id="@+id/map"
-                android:layout_width="match_parent"
-                android:layout_height="200dp" />
 
-            <TableLayout
-                android:layout_width="match_parent"
+            <TableRow
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp">
+                android:layout_margin="0dp"
+                android:layout_weight="3">
 
-
-                <TableRow
-                    android:layout_width="match_parent"
+                <Button
+                    android:id="@+id/bt_hoteles"
+                    style="@style/botton"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="0dp"
-                    android:layout_weight="3">
+                    android:background="@drawable/bt_inicio"
+                    android:drawableTop="@drawable/ic_local_hotel_black_24dp"
+                    android:text="@string/hoteles">
 
-                    <Button
-                        android:id="@+id/bt_hoteles"
-                        style="@style/botton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bt_inicio"
-                        android:drawableTop="@drawable/ic_local_hotel_black_24dp"
-                        android:text="@string/hoteles">
+                </Button>
 
-                    </Button>
+                <Button
+                    android:id="@+id/bt_restaurante"
+                    style="@style/botton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bt_inicio"
+                    android:drawableTop="@drawable/ic_restaurant_black_24dp"
+                    android:text="@string/restaurante">
 
-                    <Button
-                        android:id="@+id/bt_restaurante"
-                        style="@style/botton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bt_inicio"
-                        android:drawableTop="@drawable/ic_restaurant_black_24dp"
-                        android:text="@string/restaurante">
+                </Button>
 
-                    </Button>
+                <Button
+                    android:id="@+id/bt_cajeros"
+                    style="@style/botton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bt_inicio"
+                    android:drawableTop="@drawable/ic_cajero"
+                    android:text="@string/cajeros">
 
-                    <Button
-                        android:id="@+id/bt_cajeros"
-                        style="@style/botton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bt_inicio"
-                        android:drawableTop="@drawable/ic_cajero"
-                        android:text="@string/cajeros">
+                </Button>
 
-                    </Button>
+            </TableRow>
 
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3">
-
-                    <Button
-                        android:id="@+id/bt_lugares"
-                        style="@style/botton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bt_inicio"
-                        android:drawableTop="@drawable/ic_place"
-                        android:text="@string/lugares">
-
-                    </Button>
-
-                    <Button
-                        android:id="@+id/bt_tiendas"
-                        style="@style/botton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bt_inicio"
-                        android:drawableTop="@drawable/ic_store"
-                        android:text="@string/tiendas">
-
-                    </Button>
-
-                    <Button
-                        android:id="@+id/bt_bares"
-                        style="@style/botton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bt_inicio"
-                        android:drawableTop="@drawable/ic_bar"
-                        android:text="@string/bares">
-
-                    </Button>
-                </TableRow>
-            </TableLayout>
-
-            <TextView
-                android:id="@+id/textView2"
-                style="@android:style/Widget.Holo.TextView"
-                android:layout_width="match_parent"
+            <TableRow
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="3dp"
-                android:text="Sitios Caracteristicos"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:layout_weight="3">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_emblematicos"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="6dp" />
+                <Button
+                    android:id="@+id/bt_lugares"
+                    style="@style/botton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bt_inicio"
+                    android:drawableTop="@drawable/ic_place"
+                    android:text="@string/lugares">
 
-            <TextView
-                android:id="@+id/textView"
-                style="@android:style/Widget.Holo.TextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="3dp"
-                android:text="Sitios Turisticos"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                </Button>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_places"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                <Button
+                    android:id="@+id/bt_tiendas"
+                    style="@style/botton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bt_inicio"
+                    android:drawableTop="@drawable/ic_store"
+                    android:text="@string/tiendas">
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="3dp"
-                android:text="@string/cultural"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                </Button>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_cultural"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                <Button
+                    android:id="@+id/bt_bares"
+                    style="@style/botton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bt_inicio"
+                    android:drawableTop="@drawable/ic_bar"
+                    android:text="@string/bares">
 
-            <VideoView
-                android:id="@+id/videoView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                </Button>
+            </TableRow>
+        </TableLayout>
 
-        </LinearLayout>
-    </ScrollView>
+        <TextView
+            android:id="@+id/textView2"
+            style="@android:style/Widget.Holo.TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="3dp"
+            android:text="Sitios Caracteristicos"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_emblematicos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@android:style/Widget.Holo.TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="3dp"
+            android:text="Sitios Turisticos"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_places"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="3dp"
+            android:text="@string/cultural"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_cultural"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>

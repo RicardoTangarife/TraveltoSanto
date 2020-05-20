@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.MediaController
+import android.widget.ScrollView
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -35,8 +36,6 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
     private lateinit var mapView: MapView
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -50,7 +49,9 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
             container,
             false)
 
-
+        //view.ScrollView.scrollTo(0, 0)
+        //view.ScrollView.smoothScrollTo(0, 0)
+        //view.ScrollView.smoothScrollBy(0, 0)
 
         mapView = view.findViewById(R.id.map)
         mapView.onCreate(savedInstanceState)
@@ -93,7 +94,6 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
                 "f_casa"
             )
         )
-
 
         view.rv_places.setHasFixedSize(true)
         view.rv_places.layoutManager = LinearLayoutManager(
@@ -341,7 +341,7 @@ class InicioFragment : Fragment(), OnMapReadyCallback {
         }
 
 
-
+        //view.ScrollView.scrollTo(0,0)
 
         return view
     }

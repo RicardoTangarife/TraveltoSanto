@@ -153,13 +153,13 @@ class PerfilFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == RESULT_OK ){
-            val path = data?.data
+            var path = data?.data
             if (requestCode == 10){
                 profile_image.setImageURI(path)
                 saveImage()
             }
             else if (requestCode == 11){
-                val imageBitmap = data?.extras?.get("data") as Bitmap
+                var imageBitmap = data?.extras?.get("data") as Bitmap
                 profile_image.setImageBitmap(imageBitmap)
                 saveImage()
             }
@@ -167,18 +167,19 @@ class PerfilFragment : Fragment() {
     }
 
     private fun saveImage() {
+        val auth = FirebaseAuth.getInstance()
         var storage = FirebaseStorage.getInstance()
-        val photoRef = storage.reference.child("User").child(id.toString())
+        val photoRef = storage.reference.child("User").child(auth.currentUser?.uid.toString())
 
         profile_image?.isDrawingCacheEnabled = true
         profile_image?.buildDrawingCache()
-        val bitmap = (profile_image?.drawable as BitmapDrawable).bitmap
-        val baos = ByteArrayOutputStream()
+        var bitmap = (profile_image?.drawable as BitmapDrawable).bitmap
+        var baos = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
-        val data = baos.toByteArray()
+        var data = baos.toByteArray()
 
         var uploadTask = photoRef.putBytes(data)
-        val urlTask: Task<Uri> =
+        var urlTask: Task<Uri> =
             uploadTask.continueWithTask(Continuation<   UploadTask.TaskSnapshot, Task<Uri>> { task ->
                 if (!task.isSuccessful) {
                     task.exception?.let {
@@ -188,7 +189,7 @@ class PerfilFragment : Fragment() {
                 return@Continuation photoRef.downloadUrl
             }).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    val downloadUri = task.result
+                    var downloadUri = task.result
                     saveUser(downloadUri.toString())
                     Toast.makeText(activity!!.applicationContext, "Imagen de Perfil Actualizada", Toast.LENGTH_SHORT).show()
                 } else {
@@ -203,7 +204,7 @@ class PerfilFragment : Fragment() {
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("perfil")
         if(!usuarioext){
-            val idProf = myRef.push().key
+            var idProf = myRef.push().key
             val auth = FirebaseAuth.getInstance()
             var prof = com.ricardotangarife.traveltosanto.model.Profile(
                 idProf!!,
